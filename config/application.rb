@@ -11,6 +11,22 @@ module TodoRPG
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    # TimeZoneの設定
+    config.time_zone = "Tokyo"
+    config.i18n.load_path +=
+      Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}").to_s]
+    config.i18n.default_locale = :ja
+
+    # generateコマンドでの生成ファイルの設定
+    config.generators do |g|
+      g.skip_routes true
+      g.helper false
+      g.assets false
+      g.test_framework :rspec
+      g.controller_specs false
+      g.view_specs false
+    end
+
     # Log to STDOUT because Docker expects all processes to log here. You could
     # then collect logs using journald, syslog or forward them somewhere else.
     logger           = ActiveSupport::Logger.new(STDOUT)
@@ -24,7 +40,7 @@ module TodoRPG
     }
 
     # Set Sidekiq as the back-end for Active Job.
-    config.active_job.queue_adapter = :sidekiq
+    # config.active_job.queue_adapter = :sidekiq
 
     # Mount Action Cable outside the main process or domain.
     config.action_cable.mount_path = nil

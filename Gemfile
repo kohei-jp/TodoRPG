@@ -69,4 +69,13 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "rspec-rails"
+  gem "factory_bot_rails"
 end
+
+gem "bcrypt"
+gem "rails-i18n"
+gem "kaminari"
+gem "date_validator"
+gem "valid_email2"
+gem "nokogiri"
