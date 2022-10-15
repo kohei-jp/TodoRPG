@@ -1,7 +1,4 @@
-class PagesController < ApplicationController
-  def home
-  end
-
+class Customer::Base < ApplicationController
   private
   def current_customer
     if session[:customer_id]

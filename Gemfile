@@ -51,6 +51,8 @@ group :development, :test do
 
   # Reduces boot times through caching; required in config/boot.rb
   gem "bootsnap", require: false
+
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -70,7 +72,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem "rspec-rails"
-  gem "factory_bot_rails"
+  # gem "factory_bot_rails"
+
 end
 
 gem "bcrypt"
@@ -79,3 +82,4 @@ gem "kaminari"
 gem "date_validator"
 gem "valid_email2"
 gem "nokogiri"
+gem 'pry-byebug'

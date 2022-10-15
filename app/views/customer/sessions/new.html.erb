@@ -1,0 +1,44 @@
+<% @title = "ログイン" %>
+
+<div id="login-form">
+  <h1 class="text-center my-9"><%= @title %></h1>
+  <%= form_with model: @form, url: :session do |f| %>
+  <div className='my-9'>
+    <%= f.label :email, "メールアドレス", class: "text-gray-700" %>
+    <%= f.text_field :email, class: "
+        block
+        w-full
+        mt-1
+        border-gray-300
+        rounded-md
+        shadow-sm
+        focus:border-indigo-300
+        focus:ring
+        focus:ring-indigo-200
+        focus:ring-opacity-50
+        border
+      "  
+    %>
+  </div> 
+  <div class="my-9">
+    <%= f.label :password, "パスワード", class: "text-gray-700" %>
+    <%= f.text_field :password, class: "
+      block
+      w-full
+      mt-1
+      border-gray-300
+      rounded-md
+      shadow-sm
+      focus:border-indigo-300
+      focus:ring
+      focus:ring-indigo-200
+      focus:ring-opacity-50
+      border
+      " 
+    %>
+  </div>
+  <div class="text-center" >
+    <%= f.submit "ログイン", class: "shadow-lg px-2 py-1  bg-blue-400 text-lg text-white font-semibold rounded  hover:bg-blue-500" %>
+  </div>
+  <% end %>
+</div>
