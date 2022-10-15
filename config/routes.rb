@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  root to: "pages#home"
+  root to: 'pages#home'
   # get "/up/", to: "up#index", as: :up
   # get "/up/databases", to: "up#databases", as: :up_databases
 
   scope module: :customer do
-    get "login" => "sessions#new", as: :login
+    get 'login' => 'sessions#new', as: :login
     resources :top, only: [:index]
-    resource :session, only: [:create, :destroy]
+    resource :session, only: %i[create destroy]
   end
 
   # Sidekiq has a web dashboard which you can enable below. It's turned off by

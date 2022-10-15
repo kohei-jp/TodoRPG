@@ -4,21 +4,19 @@ class Customer::SessionsController < Customer::Base
       redirect_to :top_index
     else
       @form = Customer::LoginForm.new
-      render action: "new"
+      render action: 'new'
     end
   end
 
   def create
     @form = Customer::LoginForm.new(login_form_params)
-    if @form.email.present?
-      customer = Customer.find_by("LOWER(email) = ?", @form.email.downcase)
-    end
-    
+    customer = Customer.find_by('LOWER(email) = ?', @form.email.downcase) if @form.email.present?
+
     if Customer::Authenticator.new(customer).authenticate(@form.password)
       session[:customer_id] = customer.id
       redirect_to :top_index
     else
-      render action: "new"
+      render action: 'new'
     end
   end
 
@@ -28,8 +26,8 @@ class Customer::SessionsController < Customer::Base
   end
 
   private
+
   def login_form_params
     params.require(:customer_login_form).permit(:email, :password)
   end
-
 end

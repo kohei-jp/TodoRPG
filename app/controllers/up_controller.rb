@@ -5,7 +5,7 @@ class UpController < ApplicationController
 
   def databases
     Redis.current.ping
-    ActiveRecord::Base.connection.execute("SELECT 1")
+    ActiveRecord::Base.connection.execute('SELECT 1')
 
     head :ok
   end

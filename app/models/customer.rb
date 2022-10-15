@@ -4,5 +4,4 @@ class Customer < ApplicationRecord
   def valid?
     invalidated_at.nil?
   end
-  
 end

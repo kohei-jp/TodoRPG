@@ -1,0 +1,39 @@
+inherit_from: .rubocop_todo.yml
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# if文の中身が1行だと後置ifにする
+Style/IfUnlessModifier:
+  Enabled: false
+
+# class Customer::Base; endとするなら、module Customer; class Base; ~ end endにする
+Layout/TrailingEmptyLines:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# 文字数
+RSpec/MultipleExpectations:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false
+  
+AllCops:
+  TargetRubyVersion: 3.1
+  NewCops: enable
+
+require:
+  - rubocop-ast
+  - rubocop-rails
+  - rubocop-rake
+  - rubocop-rspec
+  - rubocop-performance

@@ -40,7 +40,6 @@ function rails {
 }
 
 function test {
-  # TODO: minitestからrspecに変更する
   # Run your Rails tests, use `test -b` to first rebuild your JS and CSS
   local run_build="${1:-}"
   local test_command="rspec"

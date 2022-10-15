@@ -1,7 +1,3 @@
 class Customer::TopController < Customer::Base
-  
-  def index
-    
-  end
-
+  def index; end
 end

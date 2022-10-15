@@ -1,0 +1,8 @@
+Metrics/BlockLength:
+  Max: 32
+  Exclude:
+    - 'config/environments/development.rb'
+
+Lint/UselessAssignment:
+  Exclude:
+    - 'config/puma.rb'
