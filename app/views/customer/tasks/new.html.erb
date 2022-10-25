@@ -1,0 +1,56 @@
+<% @title = "新しいタスク" %>
+
+<div id="login-form">
+  <h1 class="text-center my-9"><%= @title %></h1>
+  <%= form_with model: @task, url: :tasks do |f| %>
+    <div className='my-9'>
+      <%= f.label :name, "名前", class: "text-gray-700" %>
+      <%= f.text_field :name, class: "
+          block
+          mt-1
+          border-gray-300
+          rounded-md
+          shadow-sm
+          focus:border-indigo-300
+          focus:ring
+          focus:ring-indigo-200
+          focus:ring-opacity-50
+          border
+        "  
+      %>
+    </div> 
+    <div className='my-9'>
+      <%= f.label :experience_point, "経験値", class: "text-gray-700" %>
+      <%= f.text_field :experience_point, class: "
+          block
+          mt-1
+          border-gray-300
+          rounded-md
+          shadow-sm
+          focus:border-indigo-300
+          focus:ring
+          focus:ring-indigo-200
+          focus:ring-opacity-50
+          border
+        "  
+      %>
+    </div> 
+    <div className='my-9'>
+      <%= f.label :skill_id, "スキル", class: "text-gray-700" %>
+      <%= f.select :skill_id, Skill.pluck(:name, :id), { include_blank: true }, class: "
+        "  
+      %>
+    </div> 
+    <div className='my-9'>
+      <%= f.label :rank_id, "ランク", class: "text-gray-700" %>
+      <%= f.select :rank_id, Rank.pluck(:grade, :id), { include_blank: true }, class: "
+        "  
+      %>
+    </div> 
+
+    <div class="text-center" >
+      <%= f.submit "新規作成", class: "shadow-lg px-2 py-1  bg-blue-400 text-lg text-white font-semibold rounded  hover:bg-blue-500" %>
+    </div>
+  <% end %>
+  <%= link_to '戻る', :top_index %>
+</div>

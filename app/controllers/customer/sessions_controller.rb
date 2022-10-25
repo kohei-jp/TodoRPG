@@ -8,6 +8,7 @@ class Customer::SessionsController < Customer::Base
     end
   end
 
+  # ログイン
   def create
     @form = Customer::LoginForm.new(login_form_params)
     customer = Customer.find_by('LOWER(email) = ?', @form.email.downcase) if @form.email.present?
