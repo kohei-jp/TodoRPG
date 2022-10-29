@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :top, only: [:index]
     resource :session, only: %i[create destroy]
     resources :tasks
+    resources :owned_skills, only: %i[create update destroy]
   end
 
   # Sidekiq has a web dashboard which you can enable below. It's turned off by

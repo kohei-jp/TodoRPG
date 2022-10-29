@@ -8,31 +8,10 @@
   <div>
     ToDoエリア
     <% @tasks.map do |task| %>
-      <div 
-        class="shadow-md bg-white rounded-lg w-3/4 px-4 py-3 my-2 mx-auto cursor-pointer active:shadow"
-        onClick="hello('<%= task.name %>')"
-      >
-        <div class="flex justify-between">
-          <span></span>
-          <span><%= task.name %></span>
-          <span><%= task.experience_point %>Pt</span>
-        </div>
-        <div class="flex justify-between h-3.5">
-          <span></span>
-          <span></span>
-          <% if task.completed_at %>
-            <span>完了時間: <%= task.completed_at %></span>
-          <% end %>
-        </div>
-      </div>
+      <%= turbo_frame_tag task do %>
+        <%= render "task_list", task: task %>
+      <% end %>
     <% end %>
   </div>
   <%= link_to "タスク新規作成", :new_task %>
 </div>
-
-<script>
-const hello = (str) => {
-  console.log(str);
-}
-
-</script>

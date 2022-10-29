@@ -1,0 +1,27 @@
+<%# NOTE: link_toではなぜかpostメソッドが実行できず、仮でbutton_toにしている %>
+<%= button_to owned_skill_path(id: task.id), class: "w-full", method: :patch, remote: true do %>
+  <div 
+    class="shadow-md bg-white rounded-lg w-3/4 px-4 py-3 my-2 mx-auto cursor-pointer active:shadow"
+  >
+
+    <div class="flex justify-between">
+      <span></span>
+      <span><%= task.name %></span>
+      <span><%= task.experience_point %>Pt</span>
+    </div>
+
+    <div class="flex justify-between h-3.5">
+      <span></span>
+      <span></span>
+      <% t = TaskPresenter.new(task, self) %>
+      <span>
+        本日
+        <% if t.last_commit %>
+          <% if t.today_commit_count > 0 %>+<%= t.today_commit_count %>回<% end %>
+            (最終: <%= t.last_commit.completed_at.strftime("%m/%d %H:%M") %>)
+        <% end %>
+      </span>
+    </div>
+
+  </div>
+<% end %>
