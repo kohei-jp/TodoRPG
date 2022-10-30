@@ -1,9 +1,9 @@
 class TaskPresenter < ModelPresenter
-  def last_commit
+  def last_done
     object.task_histories.todays.order(:id).last
   end
 
-  def today_commit_count
+  def today_done_count
     object.task_histories.todays.size
   end
 end

@@ -1,10 +1,8 @@
-<% title = "Game Top" %>
+<% title = "トップページ(ログイン)" %>
 
 <div class="text-center">
-  <h1 class="text-3xl m-8 text-blue-500">トップページ(ログイン)</h1>
-  <% c = CustomerPresenter.new(@customer, self) %>
-  <p>顧客名：<%= c.full_name %>様</p>
-  <p>アバター名：<%= @customer.avatar&.name %></p>
+  <h1 class="text-3xl m-8 text-blue-500"><%= title %></h1>
+  <%= render "profile", customer: @customer %>
   <div>
     ToDoエリア
     <% @tasks.map do |task| %>

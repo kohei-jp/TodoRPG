@@ -1,0 +1,10 @@
+<div class="flex justify-between w-3/4 px-4 py-3 my-2 mx-auto">
+  <div>
+    <%= image_tag "customer/antonio.png", size: "48×48", alt: "アバター画像", class: "mx-auto" %>
+    <p><%= customer.avatar&.name %></p>
+  </div>
+  <div>
+    <%= render "shared/meter", min: 0, max: 100, value: 50, label: "レベル:", content: "50/100"  %>
+    <%= render "shared/meter", min: 0, max: 100, value: 70, label: "経験値:", content: "70/100"  %>
+  </div>
+</div>

@@ -14,11 +14,12 @@
       <span></span>
       <span></span>
       <% t = TaskPresenter.new(task, self) %>
-      <span>
-        本日
-        <% if t.last_commit %>
-          <% if t.today_commit_count > 0 %>+<%= t.today_commit_count %>回<% end %>
-            (最終: <%= t.last_commit.completed_at.strftime("%m/%d %H:%M") %>)
+      <span class="min-w-1/4 text-left">
+        Today
+        <% if t.today_done_count > 0 %>
+          +<%= t.today_done_count %>回
+        <% else %>
+          not yet ...
         <% end %>
       </span>
     </div>
