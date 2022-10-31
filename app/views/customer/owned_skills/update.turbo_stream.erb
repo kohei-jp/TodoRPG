@@ -1,3 +1,9 @@
+<%# Avatarのレベル・経験値を更新 %>
+<%= turbo_stream.update @customer do %>
+  <%= render "customer/top/profile", avatar: @customer.avatar %>
+<% end %>
+
+<%# 各タスクの実行履歴を更新 %>
 <%= turbo_stream.update @task do %>
   <%= render "customer/top/task_list", task: @task %>
 <% end %>

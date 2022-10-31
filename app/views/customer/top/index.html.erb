@@ -1,8 +1,10 @@
-<% title = "トップページ(ログイン)" %>
+<% title = "おかえりなさい" %>
 
 <div class="text-center">
-  <h1 class="text-3xl m-8 text-blue-500"><%= title %></h1>
-  <%= render "profile", customer: @customer %>
+  <h1 class="text-3xl m-8"><%= title %></h1>
+  <%= turbo_frame_tag @customer do %>
+    <%= render "profile", avatar: @customer.avatar %>
+  <% end %>
   <div>
     ToDoエリア
     <% @tasks.map do |task| %>
